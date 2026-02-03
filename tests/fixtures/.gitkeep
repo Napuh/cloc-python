@@ -1,0 +1,2 @@
+# This file ensures the fixtures directory is tracked by git
+# Test fixtures are generated during test execution
