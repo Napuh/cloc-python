@@ -29,7 +29,3 @@ htmlcov/
 # OS
 .DS_Store
 Thumbs.db
-
-# Test fixtures
-tests/fixtures/*.*
-!tests/fixtures/.gitkeep
