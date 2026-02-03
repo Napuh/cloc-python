@@ -3,7 +3,7 @@ name = "cloc-python"
 version = "0.1.0"
 description = "UVX-friendly wrapper for cloc (Count Lines of Code) binary executable"
 readme = "README.md"
-requires-python = ">=3.8"
+requires-python = ">=3.9"
 license = { text = "MIT" }
 dependencies = []
 keywords = ["cloc", "lines of code", "code counter", "sloc", "loc"]
@@ -14,7 +14,6 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.8",
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
@@ -52,7 +51,7 @@ testpaths = ["tests"]
 pythonpath = ["."]
 
 [tool.ruff]
-target-version = "py38"
+target-version = "py39"
 line-length = 100
 
 [tool.ruff.lint]

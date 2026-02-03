@@ -23,22 +23,16 @@ def get_cloc_path() -> Path:
     binary_name = "cloc-2.08.exe" if current_platform == "Windows" else "cloc-2.08.pl"
 
     try:
-        # For Python 3.9+
-        if hasattr(resources, "files"):
-            cloc_ref = resources.files("cloc_python") / binary_name
+        cloc_ref = resources.files("cloc_python") / binary_name
 
-            with cloc_ref.open("rb") as src:
-                temp_dir = tempfile.mkdtemp()
-                temp_path = Path(temp_dir) / binary_name
-                temp_path.write_bytes(src.read())
+        with cloc_ref.open("rb") as src:
+            temp_dir = tempfile.mkdtemp()
+            temp_path = Path(temp_dir) / binary_name
+            temp_path.write_bytes(src.read())
 
-            os.chmod(temp_path, 0o755)
+        os.chmod(temp_path, 0o755)
 
-            return temp_path
-        else:
-            # Python 3.8 compatibility
-            with resources.path("cloc_python", binary_name) as p:
-                return p
+        return temp_path
 
     except (ImportError, AttributeError):
         # Fallback to using __file__
